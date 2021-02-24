@@ -8,7 +8,7 @@ pipeline {
             steps {
                 echo 'Preparing report...'
                 withSonarQubeEnv('SonarServer') {
-                    sh "mvn clean install sonar:sonar"
+                    sh “${scannerHome}/bin/sonar-scanner -X"
                 }
             }
         }
